@@ -1,0 +1,157 @@
+.contactHero {
+  background-color: #fff;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.strokeWrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Info Column */
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.infoBlock h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #C9847A;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.infoBlock p, .infoBlock a {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.infoBlock a:hover {
+  color: #C9847A;
+}
+
+.socialRow a {
+  font-size: 0.95rem;
+  color: #2B2B2B;
+  font-weight: 500;
+  border-bottom: 1px solid #EDE0D7;
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.socialRow a:hover {
+  color: #C9847A;
+  border-color: #C9847A;
+}
+
+/* Form Column */
+.formCol {
+  background: #FDF8F5;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid #EDE0D7;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.formGroup input, .formGroup textarea {
+  padding: 14px 16px;
+  border: 1px solid #EDE0D7;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.95rem;
+  color: #2B2B2B;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.formGroup input:focus, .formGroup textarea:focus {
+  border-color: #C9847A;
+  outline: none;
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+/* Sent Notice */
+.sentNotice {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.sentNotice h3 {
+  font-size: 1.8rem;
+  color: #C9847A;
+  margin-bottom: 12px;
+}
+
+.sentNotice p {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.sentBtn {
+  background: none;
+  color: #2B2B2B;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+/* Map */
+.mapSection {
+  height: 450px;
+  background-color: #e5e5e5;
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .mapSection {
+    height: 300px;
+  }
+}

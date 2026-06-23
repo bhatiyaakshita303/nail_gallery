@@ -1,0 +1,139 @@
+.footer {
+  background-color: #2B2B2B;
+  color: #E8D5C4;
+  padding: 80px 24px 40px;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(232, 213, 196, 0.1);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+  }
+}
+
+/* Brand */
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.logoMain {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FDF8F5;
+}
+
+.logoTag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #C9847A;
+  margin-top: 4px;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #a89a90;
+  max-width: 300px;
+}
+
+/* Columns */
+.colTitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #C9847A;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linkList a {
+  color: #a89a90;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.linkList a:hover {
+  color: #FDF8F5;
+}
+
+/* Contact Col */
+.infoItem {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoItem p, .infoItem a {
+  font-size: 0.9rem;
+  color: #a89a90;
+  line-height: 1.5;
+}
+
+.infoItem a:hover {
+  color: #FDF8F5;
+}
+
+/* Bottom Bar */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.copyright, .madeWith {
+  font-size: 0.8rem;
+  color: #665e56;
+}
+
+.socials a {
+  font-size: 0.9rem;
+  color: #C9847A;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #FDF8F5;
+}

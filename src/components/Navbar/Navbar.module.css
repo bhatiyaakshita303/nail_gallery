@@ -1,0 +1,409 @@
+/* ============================================================
+   Navbar.module.css
+   Theme: #2b2b2b (dark charcoal) · #c9847a (warm rose) · #fff
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --color-dark: #2b2b2b;
+  --color-rose: #c9847a;
+  --color-rose-dark: #b5706a;
+  --color-rose-light: rgba(201, 132, 122, 0.12);
+  --color-white: #ffffff;
+  --color-text: #2b2b2b;
+  --color-text-muted: rgba(43, 43, 43, 0.65);
+  --color-dark-glass: rgba(43, 43, 43, 0.97);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  --nav-height: 68px;
+  --nav-height-scrolled: 56px;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-nav: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Header ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  transition:
+    background var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.header.scrolled {
+  background: var(--color-dark-glass);
+  box-shadow: var(--shadow-nav);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---------- Nav Container ---------- */
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: height var(--transition-smooth);
+}
+
+.scrolled .nav {
+  height: var(--nav-height-scrolled);
+}
+
+/* On dark scrolled bg — switch text back to white */
+.scrolled .logoMain {
+  color: var(--color-white);
+}
+
+.scrolled .link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.scrolled .link:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.scrolled .hamburger span {
+  background: var(--color-white);
+}
+
+.scrolled .hamburger:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.15;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.logoMain {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+  transition: color var(--transition-smooth);
+}
+
+.logoTag {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--color-rose);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.logo:hover .logoMain {
+  color: var(--color-rose);
+}
+
+/* ---------- Desktop Menu ---------- */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileCta {
+  display: none;
+}
+
+/* ---------- Nav Links ---------- */
+.link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  position: relative;
+  transition:
+    color var(--transition-smooth),
+    background var(--transition-smooth);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 1.5px;
+  background: var(--color-rose);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-smooth);
+}
+
+.link:hover {
+  color: var(--color-text);
+  background: rgba(43, 43, 43, 0.06);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.link.active {
+  color: var(--color-rose);
+  background: var(--color-rose-light);
+}
+
+.link.active::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Actions ---------- */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ---------- CTA (Desktop) ---------- */
+.navCtaDesktop {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--color-rose);
+  padding: 9px 20px;
+  border-radius: 6px;
+  transition:
+    background var(--transition-smooth),
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.navCtaDesktop:hover {
+  background: var(--color-rose-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201, 132, 122, 0.35);
+}
+
+.navCtaDesktop:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ---------- CTA (Mobile menu) ---------- */
+.navCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--color-rose);
+  padding: 13px 28px;
+  border-radius: 8px;
+  width: 100%;
+  transition: background var(--transition-smooth);
+}
+
+.navCta:hover {
+  background: var(--color-rose-dark);
+}
+
+/* ---------- Hamburger ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background var(--transition-smooth);
+}
+
+.hamburger:hover {
+  background: rgba(43, 43, 43, 0.08);
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transform-origin: center;
+  transition:
+    transform var(--transition-smooth),
+    opacity var(--transition-smooth),
+    width var(--transition-smooth);
+}
+
+/* Hamburger → X animation */
+.hamburgerOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburgerOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  /* Hide desktop CTA */
+  .navCtaDesktop {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Show mobile CTA inside menu */
+  .mobileCta {
+    display: block;
+    width: 100%;
+    padding: 4px 0 8px;
+  }
+
+  /* Full-screen mobile drawer */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-dark);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 80px 32px 40px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition:
+      opacity var(--transition-smooth),
+      transform var(--transition-smooth);
+  }
+
+  .menuOpen {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  /* Bigger tap targets */
+  .link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 12px 24px;
+    color: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .link:hover,
+  .link.active {
+    color: var(--color-white);
+    background: var(--color-rose-light);
+  }
+
+  .link.active {
+    color: var(--color-rose);
+  }
+
+  .link::after {
+    display: none;
+  }
+
+  /* Divider before mobile CTA */
+  .mobileCta {
+    margin-top: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(201, 132, 122, 0.25);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0 16px;
+  }
+
+  .logoMain {
+    font-size: 1.25rem;
+  }
+
+  .logoTag {
+    font-size: 0.58rem;
+  }
+
+  .link {
+    font-size: 1.05rem;
+  }
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.hamburger:focus-visible,
+.link:focus-visible,
+.navCtaDesktop:focus-visible,
+.navCta:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 3px;
+}

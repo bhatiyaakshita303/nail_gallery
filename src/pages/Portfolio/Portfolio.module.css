@@ -1,0 +1,180 @@
+.portfolioHeader {
+  text-align: center;
+  background-color: #FDF8F5;
+}
+
+.sectionHeader {
+  margin-bottom: 40px;
+}
+
+.strokeWrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filterBtn {
+  padding: 10px 24px;
+  border: 1px solid #EDE0D7;
+  border-radius: 50px;
+  background: #fff;
+  color: #666;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.filterBtn:hover {
+  border-color: #C9847A;
+  color: #C9847A;
+}
+
+.filterActive {
+  background-color: #2B2B2B;
+  color: #FDF8F5;
+  border-color: #2B2B2B;
+}
+
+.filterActive:hover {
+  color: #FDF8F5;
+}
+
+/* Masonry Grid */
+.gallerySection {
+  padding: 0 24px 80px;
+  background-color: #FDF8F5;
+}
+
+.masonryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .masonryGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonryGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.masonryItem {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.masonryTall {
+  aspect-ratio: 1/1.2;
+  grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+  .masonryTall {
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+}
+
+.masonryItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.masonryOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(43, 43, 43, 0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.masonryCat {
+  color: #fff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.masonryItem:hover img {
+  transform: scale(1.05);
+}
+
+.masonryItem:hover .masonryOverlay {
+  opacity: 1;
+}
+
+/* Custom CTA */
+.customCta {
+  padding: 100px 24px;
+  background-color: #2B2B2B;
+  text-align: center;
+}
+
+.customCtaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.customCta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: #FDF8F5;
+  margin-bottom: 16px;
+}
+
+.customCta p {
+  color: #a89a90;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.customCtaBtn {
+  border-color: #FDF8F5 !important;
+  color: #FDF8F5 !important;
+}
+
+.customCtaBtn:hover {
+  background-color: #FDF8F5 !important;
+  color: #2B2B2B !important;
+}

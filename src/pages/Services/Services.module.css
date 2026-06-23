@@ -1,0 +1,218 @@
+/* Hero */
+.hero {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+}
+
+.heroBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(253,248,245,0.2), rgba(253,248,245,1));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+  margin-top: 40px;
+}
+
+.strokeWrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  color: #2B2B2B;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.servicesGrid {
+  background-color: #FDF8F5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border: 1px solid #EDE0D7;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #C9847A;
+  box-shadow: 0 10px 30px rgba(201, 132, 122, 0.08);
+}
+
+.cardIcon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.cardContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.cardName {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.cardPrice {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #C9847A;
+  white-space: nowrap;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.cardBtn {
+  align-self: flex-start;
+}
+
+/* FAQ */
+.faqSection {
+  padding: 120px 24px;
+  background-color: #fff;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.faqList {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  border: 1px solid #EDE0D7;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faqOpen {
+  border-color: #C9847A;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2B2B2B;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.faqOpen .faqQuestion {
+  color: #C9847A;
+}
+
+.faqIcon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.faqAnswer {
+  padding: 0 24px 20px;
+}
+
+.faqAnswer p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+.faqAnswer[hidden] {
+  display: none;
+}
